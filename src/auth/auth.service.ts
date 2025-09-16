@@ -19,6 +19,7 @@ export class AuthService {
     try {
       return await this.usersService.create(email, hashedPassword);
     } catch (error) {
+      console.error('Error during signup:', error);
       if (error.code === 11000) {
         throw new ConflictException('Email already exists');
       }

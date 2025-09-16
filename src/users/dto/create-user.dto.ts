@@ -7,7 +7,7 @@ export class CreateUserDto {
   @IsEmail()
   email: string;
 
-  @ApiProperty({ example: 'strongPassword123' })
+  @ApiProperty({ example: 'strongpassword', minLength: 6 })
   @IsString()
   @MinLength(6)
   password: string;
